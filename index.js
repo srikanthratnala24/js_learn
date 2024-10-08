@@ -178,3 +178,72 @@ let myString = JSON.stringify(fruits);
 console.log(myString);
 
 // -------------------------------------------------------------------------------------
+
+// Object Constructor Functions
+/*Sometimes we need to create many objects of the same type.
+
+To create an object type we use an object constructor function.
+
+It is considered good practice to name constructor functions with an upper-case first letter. */
+
+function Person(first, last, age, eye) {
+  this.firstName = first;
+  this.lastName = last;
+  this.age = age;
+  this.eyeColor = eye;
+}
+
+// The value of this will become the new object when a new object is created.
+const myFather = new Person("John", "Doe", 50, "blue");
+const myMother = new Person("Sally", "Rally", 48, "green");
+
+console.log(myFather.firstName);
+console.log(myMother.firstName);
+
+// Property Default Values
+// A value given to a property will be a default value for all objects created by the constructor:
+
+function Person(first, last, age, eyecolor) {
+  this.firstName = first;
+  this.lastName = last;
+  this.age = age;
+  this.eyeColor = eyecolor;
+  this.nationality = "English";
+}
+
+const myDaughter = new Person("Darshini", "Doe", 50, "blue");
+
+console.log(myDaughter.nationality);
+
+// Adding a Property to an Object
+myDaughter.speaks = "Spanish";
+console.log(myDaughter.speaks);
+
+// you can NOT add a new property to an object constructor:
+
+Person.new_field = "Ratnala"; // will not work with a 0bject constructior.
+console.log(myDaughter.new_field);
+
+// To add a new property, you must add it to the constructor function prototype:
+
+Person.prototype.new_field = "new value";
+console.log(myDaughter.new_field);
+
+
+//Constructor Function Methods
+// A constructor function can also have methods:
+
+function car(brand,year,milage,color){
+  this.brand = brand;
+  this.year = year;
+  this.milage = milage;
+  this.color = color;
+  this.car_info = function(){
+    return this.brand + " car has mileage of " + this.milage + " bought in " + this.year
+  }
+}
+
+
+const car1 = new car("filat",2015,20,"red");
+// console.log(car1)
+document.getElementById('car_info').innerHTML += car1.car_info();
