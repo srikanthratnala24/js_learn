@@ -50,6 +50,9 @@ const person_details = {
 
 console.log(person_details.fullName())
 
+// need to check with parameters
+
+
 // ------------------------------------------------------------------------------------
 
 //objects are mutable
@@ -67,5 +70,111 @@ console.log(y.firstName)
 console.log(person_details.firstName)
 
 // ---------------------------------------------------------------------------------
+/*
+An Object is an Unordered Collection of Properties
+Properties are the most important part of JavaScript objects.
+
+Properties can be changed, added, deleted, and some are read only.
+*/
+
+//Accessing JavaScript Properties
+let age = person.age;
+
+//Adding New Properties
+person.nationality = "English";
+
+console.log(person)
+
+//Deleting Properties
+
+delete person.age;
+
+console.log(person) // delete person["age"]; we can also use this.
+
+//---------------------------------------------------------------------------
+//Nested Objects
+
+myObj = {
+  name:"John",
+  age:30,
+  myCars: {
+    car1:"Ford",
+    car2:"BMW",
+    car3:"Fiat"
+  }
+}
+
+console.log(myObj.myCars.car1)
+
+//--------------------------------------------------------------------------------
+
+//JavaScript Object Methods
+/*
+Object methods are actions that can be performed on objects.
+
+A method is a function definition stored as a property value.
+*/
 
 
+const object_method = {
+  firstName: "John",
+  lastName: "Doe",
+  id: 5566,
+  fullName: function() {
+    return this.firstName + " " + this.lastName;
+  }
+};
+
+console.log(object_method.fullName())
+// --------------------------------------------------------------------------------
+// Displaying Object Properties
+document.getElementById("demo").innerHTML +=
+object_method.firstName + "," + object_method.id + "," + object_method.fullName();
+
+// Displaying Properties in a Loop
+let val = [];
+for(let x in object_method){
+  if (typeof object_method[x] !== 'function'){
+    val += `${x}: ${object_method[x]} <br>`
+    console.log(`${x}: ${object_method[x]}`)
+
+  }
+  else{
+    console.log(`${x}:this is function`)
+    val += `${x} : this is function <br>`
+  }
+}
+
+document.getElementById('demo1').innerHTML += val
+
+
+//Using Object.values()
+
+// Object.values() creates an array from the property values:
+
+const myArray = Object.values(object_method);
+document.getElementById("myarray").innerHTML += myArray;
+
+
+//Using Object.entries()
+// Object.entries() makes it simple to use objects in loops:
+
+const fruits = {Bananas:300, Oranges:200, Apples:500};
+let fruits_val = "";
+
+for(let [fruit, value ] of Object.entries(fruits)){
+  fruits_val += fruit + ": " + value + "<br>"
+}
+document.getElementById('fruits_id').innerHTML += fruits_val;
+
+
+// Using JSON.stringify()
+
+/* JavaScript objects can be converted to a string with JSON method JSON.stringify().
+
+JSON.stringify() is included in JavaScript and supported in all major browsers.*/
+
+let myString = JSON.stringify(fruits);
+console.log(myString);
+
+// -------------------------------------------------------------------------------------
