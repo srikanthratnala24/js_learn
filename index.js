@@ -238,7 +238,7 @@ function car(brand,year,milage,color){
   this.year = year;
   this.milage = milage;
   this.color = color;
-  this.car_info = function(){
+  this.car_info = function(){ //Adding a method
     return this.brand + " car has mileage of " + this.milage + " bought in " + this.year
   }
 }
@@ -247,3 +247,137 @@ function car(brand,year,milage,color){
 const car1 = new car("filat",2015,20,"red");
 // console.log(car1)
 document.getElementById('car_info').innerHTML += car1.car_info();
+// ----------------------------------------------------------------------------------
+/*Built-in JavaScript Constructors
+JavaScript has built-in constructors for all native objects:
+
+new Object()   // A new Object object
+new Array()    // A new Array object
+new Map()      // A new Map object
+new Set()      // A new Set object
+new Date()     // A new Date object
+new RegExp()   // A new RegExp object
+new Function() // A new Function object 
+
+
+Use object literals {} instead of new Object().
+
+Use array literals [] instead of new Array().
+
+Use pattern literals /()/ instead of new RegExp().
+
+Use function expressions () {} instead of new Function(). */
+
+// ----------------------------------------------------------------------------
+
+// JavaScript Events
+
+// HTML events are "things" that happen to HTML elements.
+
+// When JavaScript is used in HTML pages, JavaScript can "react" on these events.
+
+// In the following example, an onclick attribute (with code), is added to a <button> element:
+
+
+
+function displayDate(){
+  document.getElementById('displaydate').innerHTML = Date();
+}
+
+
+// Common HTML Events
+/* Event	Description
+
+onchange	An HTML element has been changed
+onclick	The user clicks an HTML element
+onmouseover	The user moves the mouse over an HTML element
+onmouseout	The user moves the mouse away from an HTML element
+onkeydown	The user pushes a keyboard key
+onload	The browser has finished loading the page 
+
+*/
+
+
+
+// strings
+// A JavaScript string is zero or more characters written inside quotes.
+
+let carName1 = "volvo xc60";
+let carName2 = 'TATA xc60';
+
+console.log(carName1,carName2);
+
+
+let answer1 = "It's alright";
+let answer2 = "He is called 'Johnny'";
+let answer3 = 'He is called "Johnny"';
+
+console.log(answer1,answer2,answer3);
+
+
+// Templates are strings enclosed in backticks (`This is a template string`).
+
+// Templates allow single and double quotes inside a string:
+
+let text = `He's often called "Johnny"`;
+
+console.log(text);
+
+
+// To find the length of a string, use the built-in length property:
+
+console.log(text.length);
+
+
+let str1 = "John";        // x is a string
+let obj2 = new String("John");  // y is an object
+
+console.log(str1==obj2); //true
+console.log(str1===y); //false
+
+
+
+//JavaScript String Methods
+
+/*
+Basic String Methods
+Javascript strings are primitive and immutable: All string methods produce a new string without altering the original string.
+
+String length
+String charAt()
+String charCodeAt()
+String at()
+String [ ]
+String slice()
+String substring()
+String substr()
+String toUpperCase()
+String toLowerCase()
+String concat()
+String trim()
+String trimStart()
+String trimEnd()
+String padStart()
+String padEnd()
+String repeat()
+String replace()
+String replaceAll()
+String split()
+
+*/
+
+
+/*
+Extracting String Characters
+There are 4 methods for extracting string characters:
+
+The at(position) Method
+The charAt(position) Method returns the character at a specified index (position) in a string:
+The charCodeAt(position) Method returns the code of the character at a specified index in a string:
+Using property access [] like in arrays */
+
+console.log(text.charAt(25));
+console.log(text.charCodeAt(3));
+console.log(text.at(5));
+console.log(text.at(-5));
+console.log(text[5]);
