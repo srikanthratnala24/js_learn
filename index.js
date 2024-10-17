@@ -381,3 +381,19 @@ console.log(text.charCodeAt(3));
 console.log(text.at(5));
 console.log(text.at(-5));
 console.log(text[5]);
+
+
+
+
+
+
+// ---------------------------------------------------------------------------------------------------
+// slice() extracts a part of a string and returns the extracted part in a new string.
+console.log(text.slice(0,2))
+//substring() is similar to slice().The difference is that start and end values less than 0 are treated as 0 in substring().
+console.log(text.substring(-3,2)) 
+
+console.log(text.toUpperCase());
+console.log(text.toLowerCase());
+
+console.log(text.repeat(4)) //he repeat() method returns a string with a number of copies of a string.
