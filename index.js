@@ -397,3 +397,38 @@ console.log(text.toUpperCase());
 console.log(text.toLowerCase());
 
 console.log(text.repeat(4)) //he repeat() method returns a string with a number of copies of a string.
+
+console.log(text.replace('Johnny','srikanth'));
+console.log(text.replaceAll('s','t'));
+console.log(text.split('often'));
+
+const str = "apple and banana and cherry";
+console.log(str.split(/(?=and)|(?<=and)/)); // / Using regular expression with lookahead and lookbehind to keep "and"
+
+// ---------------------------------------------------------------------------------------------------------------------
+
+// JavaScript String Search
+
+// The indexOf() method returns the index (position) of the first occurrence of a string in a string, or it returns -1 if the string is not found:
+
+console.log(str.indexOf('and'));
+
+// The lastIndexOf() method returns the index of the last occurrence of a specified text in a string:
+console.log(str.lastIndexOf('and'));
+
+// Both indexOf(), and lastIndexOf() return -1 if the text is not found:
+console.log(str.lastIndexOf("John"));
+
+// Both methods accept a second parameter as the starting position for the search:
+console.log(str.indexOf('and',11));
+console.log(str.indexOf('and',3));
+
+// The lastIndexOf() methods searches backwards (from the end to the beginning), meaning: if the second parameter is 15, the search starts at position 15, and searches to the beginning of the string.
+console.log(str.lastIndexOf('and',3));
+
+// -------------------------------------------------------------------------------------------------------------------------
+// JavaScript String search()
+
+// The search() method searches a string for a string (or a regular expression) and returns the position of the match:
+console.log(str.search('and'));
+console.log(str.search(/and/));
